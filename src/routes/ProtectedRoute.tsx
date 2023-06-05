@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { PropsProtectedRoute } from "../interface/PropsProtectedRoute.interface";
+import { PropsProtectedRoute } from "../interface/props/PropsProtectedRoute.interface";
 import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
 

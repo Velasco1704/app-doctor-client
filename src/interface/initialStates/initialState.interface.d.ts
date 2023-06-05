@@ -1,4 +1,4 @@
-import { SessionDataTypes } from "./sessionData.interface";
+import { SessionDataTypes } from "../sessionData.interface";
 
 export interface InitialStateTypes {
   user: null | SessionDataTypes;

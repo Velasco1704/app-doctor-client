@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { InitialStateTypes } from "../interface/initialState.interface";
+import { InitialStateTypes } from "../interface/initialStates/initialState.interface";
 import { SessionDataTypes } from "../interface/sessionData.interface";
 
 const initialState: InitialStateTypes = {
