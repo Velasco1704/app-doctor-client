@@ -40,7 +40,7 @@ export const App = () => {
           path="/profile"
           element={
             <ProtectedRoute>
-              <Profile />
+              <Profile id={user?.data.id} />
             </ProtectedRoute>
           }
         />

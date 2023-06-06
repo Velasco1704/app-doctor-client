@@ -10,7 +10,7 @@ import { FormStateTypes } from "../interface/formState.interface";
 export const Dashboard = () => {
   const { userId } = useSelector((state: RootState) => state.userId);
   const [deletePatient] = useDeletePatientMutation();
-  const { data } = useGetDoctorQuery(userId);
+  const { data, isLoading } = useGetDoctorQuery(userId);
   const [formState, setFormState] = useState<FormStateTypes>({
     updateState: false,
     newPatientState: false,
@@ -30,7 +30,7 @@ export const Dashboard = () => {
   });
 
   const handleDeletePatient = (id: number) => deletePatient(id);
-
+  if (isLoading) return <h1>Loading...</h1>;
   return (
     <>
       <Nav />

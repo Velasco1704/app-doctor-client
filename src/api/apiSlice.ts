@@ -5,6 +5,7 @@ import { UpdatePatientApi } from "../interface/updatePatientApi.interface";
 import { Doctor } from "../interface/doctor.interface";
 import { CreatePatientTypes } from "../interface/createPatient.interface";
 import { Patient } from "../interface/patient.interface";
+import { UpdateDoctorApiTypes } from "../interface/updateDoctorApi.interface";
 
 export const doctorsApi = createApi({
   reducerPath: "doctorsApi",
@@ -30,6 +31,14 @@ export const doctorsApi = createApi({
     getDoctor: builder.query<Doctor, number>({
       query: (id: number) => `/doctors/${id}`,
       providesTags: ["Doctors"],
+    }),
+    updateDoctorProfile: builder.mutation({
+      query: (payload: UpdateDoctorApiTypes) => ({
+        url: `/update-doctor/${payload.id}`,
+        method: "PUT",
+        body: payload.doctorUpdated,
+      }),
+      invalidatesTags: ["Doctors"],
     }),
     getPatientById: builder.query<Patient, string | undefined>({
       query: (id: string) => `/patients/${id}`,
@@ -64,6 +73,7 @@ export const {
   useLoginMutation,
   useRegisterMutation,
   useGetDoctorQuery,
+  useUpdateDoctorProfileMutation,
   useGetPatientByIdQuery,
   useCreatePatientMutation,
   useUpdatePatientMutation,
