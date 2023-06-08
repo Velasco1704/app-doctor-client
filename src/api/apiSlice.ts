@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { SignInForm } from "../interface/signIn.interface";
-import { SignUpForm } from "../interface/signUp.interface";
-import { UpdatePatientApi } from "../interface/updatePatientApi.interface";
+import { SignInFormTypes } from "../interface/signIn.interface";
+import { SignUpFormTypes } from "../interface/signUp.interface";
+import { UpdatePatientApiTypes } from "../interface/updatePatientApi.interface";
 import { Doctor } from "../interface/doctor.interface";
 import { CreatePatientTypes } from "../interface/createPatient.interface";
 import { Patient } from "../interface/patient.interface";
@@ -15,14 +15,14 @@ export const doctorsApi = createApi({
   tagTypes: ["Doctors"],
   endpoints: (builder) => ({
     login: builder.mutation({
-      query: (payload: SignInForm) => ({
+      query: (payload: SignInFormTypes) => ({
         url: "/login",
         method: "POST",
         body: payload,
       }),
     }),
     register: builder.mutation({
-      query: (payload: SignUpForm) => ({
+      query: (payload: SignUpFormTypes) => ({
         url: "/create-doctor",
         method: "POST",
         body: payload,
@@ -52,7 +52,7 @@ export const doctorsApi = createApi({
       invalidatesTags: ["Doctors"],
     }),
     updatePatient: builder.mutation({
-      query: (payload: UpdatePatientApi) => ({
+      query: (payload: UpdatePatientApiTypes) => ({
         url: `/update-patient/${payload.id}`,
         method: "PUT",
         body: payload.userUpdated,

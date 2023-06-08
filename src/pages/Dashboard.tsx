@@ -2,15 +2,17 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Nav } from "../components/Nav";
 import { RootState } from "../app/store";
-import { useDeletePatientMutation, useGetDoctorQuery } from "../api/apiSlice";
+import { useGetDoctorQuery } from "../api/apiSlice";
 import { CreatePatient } from "../components/CreatePatient";
 import { EditPatient } from "../components/EditPatient";
 import { FormStateTypes } from "../interface/formState.interface";
+import { ListPatients } from "../components/ListPatients";
+import { Loader } from "../components/Loader";
+import "../styles/Dashboard.scss";
 
 export const Dashboard = () => {
-  const { userId } = useSelector((state: RootState) => state.userId);
-  const [deletePatient] = useDeletePatientMutation();
-  const { data, isLoading } = useGetDoctorQuery(userId);
+  const { user } = useSelector((state: RootState) => state.user);
+  const { data, isLoading } = useGetDoctorQuery(user?.data.id || 0);
   const [formState, setFormState] = useState<FormStateTypes>({
     updateState: false,
     newPatientState: false,
@@ -29,8 +31,7 @@ export const Dashboard = () => {
     },
   });
 
-  const handleDeletePatient = (id: number) => deletePatient(id);
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading) return <Loader />;
   return (
     <>
       <Nav />
@@ -44,8 +45,9 @@ export const Dashboard = () => {
           setFormState={setFormState}
         />
       )}
-      <div>
+      <div className="dashboard__container">
         <button
+          className="dashboard__newPatient__button"
           onClick={() => setFormState({ ...formState, newPatientState: true })}
         >
           New Patient
@@ -53,53 +55,11 @@ export const Dashboard = () => {
         {data?.patients?.length === 0 ? (
           <p>You don't have patients</p>
         ) : (
-          data?.patients?.map((patient) => (
-            <div key={patient.id}>
-              <div>
-                <h2>Name: {patient.name}</h2>
-                <p>Full Name: {patient.fullName}</p>
-                <p>Age: {patient.age}</p>
-                <p>Height: {patient.height}cm</p>
-                <p>Weight: {patient.weight}kg</p>
-              </div>
-              <div>
-                <div>
-                  <h3>Info</h3>
-                  <p>Married: {patient.married ? "Yes" : "No"}</p>
-                  <p>
-                    Children: {patient.children === 0 ? "No" : patient.children}
-                  </p>
-                  <p>Address: {patient.address}</p>
-                  <div>
-                    <h4>Contact:</h4>
-                    <p>Email: {patient.email}</p>
-                    <p>Number: {patient.number}</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <button
-                  onClick={() =>
-                    setFormState({
-                      ...formState,
-                      updateState: true,
-                      id: patient.id,
-                      payload: patient,
-                    })
-                  }
-                  type="button"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => handleDeletePatient(patient.id)}
-                  type="button"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          ))
+          <ListPatients
+            data={data}
+            formState={formState}
+            setFormState={setFormState}
+          />
         )}
       </div>
     </>

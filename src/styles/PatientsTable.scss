@@ -1,0 +1,24 @@
+.patientsTable__container {
+  .patientsTable__h1 {
+    font-size: 2em;
+  }
+
+  .patientsTable__table {
+    font-size: 1.3em;
+
+    .patientsTable__tr {
+      text-align: center;
+      padding: .5rem 1rem;
+
+      .patientsTable__th {
+        padding: .5rem 1rem;
+        border: .15rem solid var(--blue);
+      }
+
+      .patientsTable__td {
+        padding: .5rem 1rem;
+        border: .15rem solid var(--blue);
+      }
+    }
+  }
+}

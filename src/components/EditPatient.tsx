@@ -24,6 +24,7 @@ export const EditPatient: React.FC<PropsEditPatientTypes> = ({
       {isError && <p>Error</p>}
 
       <form onSubmit={handleSubmit}>
+        <label>Name:</label>
         <input
           onChange={({ target }) =>
             setFormState({
@@ -36,6 +37,7 @@ export const EditPatient: React.FC<PropsEditPatientTypes> = ({
           name="name"
           type="text"
         />
+        <label>Full Name:</label>
         <input
           onChange={({ target }) =>
             setFormState({
@@ -48,6 +50,7 @@ export const EditPatient: React.FC<PropsEditPatientTypes> = ({
           name="fullName"
           type="text"
         />
+        <label>Age:</label>
         <input
           onChange={({ target }) =>
             setFormState({
@@ -60,6 +63,7 @@ export const EditPatient: React.FC<PropsEditPatientTypes> = ({
           name="age"
           type="text"
         />
+        <label>Email:</label>
         <input
           onChange={({ target }) =>
             setFormState({
@@ -72,6 +76,7 @@ export const EditPatient: React.FC<PropsEditPatientTypes> = ({
           name="email"
           type="email"
         />
+        <label>Address:</label>
         <input
           onChange={({ target }) =>
             setFormState({
@@ -84,6 +89,7 @@ export const EditPatient: React.FC<PropsEditPatientTypes> = ({
           name="address"
           type="text"
         />
+        <label htmlFor="">Contact Number:</label>
         <input
           onChange={({ target }) =>
             setFormState({
@@ -96,6 +102,7 @@ export const EditPatient: React.FC<PropsEditPatientTypes> = ({
           name="number"
           type="text"
         />
+        <label htmlFor="">Height:</label>
         <input
           onChange={({ target }) =>
             setFormState({
@@ -108,6 +115,7 @@ export const EditPatient: React.FC<PropsEditPatientTypes> = ({
           name="height"
           type="text"
         />
+        <label>Weight:</label>
         <input
           onChange={({ target }) =>
             setFormState({
@@ -120,6 +128,7 @@ export const EditPatient: React.FC<PropsEditPatientTypes> = ({
           name="weight"
           type="text"
         />
+        <label>Children:</label>
         <input
           onChange={({ target }) =>
             setFormState({

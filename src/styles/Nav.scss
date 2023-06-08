@@ -1,0 +1,25 @@
+.nav__container {
+  width: 100vw;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .nav__li {
+    font-size: 1.7rem;
+    margin: 0 4rem;
+
+    .nav__link {
+      padding: .2rem .5rem;
+      border: .2rem solid transparent;
+      border-radius: .3rem;
+      transition: .2s;
+
+      &:hover {
+        transition: .2s;
+        color: var(--blue-light);
+        border-color: var(--blue-light);
+      }
+    }
+  }
+}

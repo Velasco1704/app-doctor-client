@@ -1,0 +1,81 @@
+.listPatients__container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+
+  .listPatients__card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.11em;
+    background: var(--white);
+    color: var(--black);
+    border-radius: .3rem;
+    padding: 1rem;
+
+    .listPatients__card__info {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+
+      .listPatients__card__info__h3 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.3em;
+      }
+
+      hr {
+        border: .1rem solid var(--blue-dark);
+      }
+
+      .listPatients__card__info__ul {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+      }
+    }
+
+    .listPatients__card__contact {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+
+      .listPatients__card__contact__h3 {
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+
+      hr {
+        border: .1rem solid var(--blue-dark);
+      }
+
+      .listPatients__card__contact__ul {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+      }
+    }
+
+    .listPatients__card__buttons {
+      display: flex;
+      justify-content: space-around;
+
+      .listPatients__card__button {
+        cursor: pointer;
+        color: var(--white);
+        font-weight: bold;
+        padding: .5rem 1rem;
+        border-radius: .3rem;
+      }
+
+      .listPatients__edit__button {
+        background: var(--blue-light);
+      }
+
+      .listPatients__delete__button {
+        background: red;
+      }
+    }
+  }
+}

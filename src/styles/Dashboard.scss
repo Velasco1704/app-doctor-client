@@ -1,0 +1,21 @@
+.dashboard__container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+
+  .dashboard__newPatient__button {
+    cursor: pointer;
+    background: var(--blue);
+    padding: .5rem 1rem;
+    border-radius: .3rem;
+    transition: .2s;
+
+    &:hover {
+      background: var(--blue-light);
+      transition: .2s;
+    }
+  }
+}

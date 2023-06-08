@@ -1,34 +1,30 @@
 import { Nav } from "../components/Nav";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { clearLocalStorage } from "../features/userSlice.ts";
-import { ListPatients } from "../components/ListPatients.tsx";
+import { PatientsTable } from "../components/PatientsTable.tsx";
 import { useSelector } from "react-redux";
 import { useGetDoctorQuery } from "../api/apiSlice.ts";
 import { RootState } from "../app/store.ts";
+import "../styles/Home.scss";
+import { Loader } from "../components/Loader.tsx";
 
 export const Home = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { userId } = useSelector((state: RootState) => state.userId);
-  const { data } = useGetDoctorQuery(userId);
+  const { user } = useSelector((state: RootState) => state.user);
+  const { data, isLoading } = useGetDoctorQuery(user?.data.id || 0);
 
-  const handleLogOut = () => {
-    dispatch(clearLocalStorage());
-    navigate("/login");
-  };
-
+  if (isLoading) return <Loader />;
   return (
     <>
       <Nav />
-      <div>
-        <h1>Home</h1>
-        <h3>Patients</h3>
-        <button onClick={() => navigate("/dashboard")} type="button">
-          Details of Patients
+      <div className="home__container">
+        <button
+          className="home__button"
+          onClick={() => navigate("/dashboard")}
+          type="button"
+        >
+          Edit Profile Patients
         </button>
-        <ListPatients data={data} />
-        <button onClick={handleLogOut}>Log Out</button>
+        <PatientsTable data={data} />
       </div>
     </>
   );

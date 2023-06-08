@@ -36,6 +36,7 @@ export const EditDoctorProfile: React.FC<PropsEditDoctorProfileTypes> = ({
           onChange={({ target }) =>
             setFormEditProfile({ ...formEditProfile, name: target.value })
           }
+          value={formEditProfile.name || ""}
           type="text"
           name="name"
         />
@@ -44,6 +45,7 @@ export const EditDoctorProfile: React.FC<PropsEditDoctorProfileTypes> = ({
           onChange={({ target }) =>
             setFormEditProfile({ ...formEditProfile, fullName: target.value })
           }
+          value={formEditProfile.fullName || ""}
           type="text"
           name="fullName"
         />
@@ -52,6 +54,7 @@ export const EditDoctorProfile: React.FC<PropsEditDoctorProfileTypes> = ({
           onChange={({ target }) =>
             setFormEditProfile({ ...formEditProfile, age: +target.value })
           }
+          value={formEditProfile.age || 0}
           type="number"
           name="age"
         />
@@ -60,10 +63,11 @@ export const EditDoctorProfile: React.FC<PropsEditDoctorProfileTypes> = ({
           onChange={({ target }) =>
             setFormEditProfile({ ...formEditProfile, email: target.value })
           }
+          value={formEditProfile.email || ""}
           type="email"
           name="email"
         />
-        <label>Change Your Password</label>
+        <label>Change Your Password(Optional)</label>
         <input
           onChange={({ target }) =>
             setFormEditProfile({ ...formEditProfile, password: target.value })

@@ -1,6 +1,6 @@
 import { PatientForm } from "./form/patientForm.interface";
 
-export interface UpdatePatientApi {
+export interface UpdatePatientApiTypes {
   id: string | undefined;
   userUpdated: PatientForm;
 }

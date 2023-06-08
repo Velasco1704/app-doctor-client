@@ -1,13 +1,23 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Nav } from "../components/Nav";
 import { PropsProfileTypes } from "../interface/props/PropsProfile.interface";
 import { EditDoctorProfile } from "../components/EditDoctorProfile";
 import { useGetDoctorQuery } from "../api/apiSlice";
+import { useDispatch } from "react-redux";
+import { clearLocalStorage } from "../features/userSlice";
 
 export const Profile: React.FC<PropsProfileTypes> = ({ id }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { data } = useGetDoctorQuery(id || 0);
   const [editProfileState, setEditProfileState] = useState(false);
+
+  const handleLogOut = () => {
+    dispatch(clearLocalStorage());
+    navigate("/login");
+  };
+
   return (
     <>
       <Nav />
@@ -18,6 +28,7 @@ export const Profile: React.FC<PropsProfileTypes> = ({ id }) => {
         />
       )}
       <div>
+        <button onClick={handleLogOut}>Log Out</button>
         <button onClick={() => setEditProfileState(true)}>
           Edit Your Profile
         </button>

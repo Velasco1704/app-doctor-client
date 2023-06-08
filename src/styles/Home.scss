@@ -1,0 +1,21 @@
+.home__container {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  .home__button {
+    cursor: pointer;
+    background: var(--blue-dark);
+    padding: .5rem 1rem;
+    border-radius: .3rem;
+    transition: .2s;
+
+    &:hover {
+      transition: .2s;
+      background: var(--blue-light);
+    }
+  }
+}

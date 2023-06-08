@@ -1,3 +1,3 @@
-import { PropsListPatients } from "./PropsListPatients.interface";
+import { PropsPatientsTableTypes } from "./PropsPatientsTable.interface";
 
-export type PropsDashboard = PropsListPatients;
+export type PropsDashboard = PropsPatientsTableTypes;
