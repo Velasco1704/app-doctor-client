@@ -15,7 +15,25 @@
 
     &:hover {
       transition: .2s;
+      color: var(--black);
       background: var(--blue-light);
+    }
+  }
+
+  .home__button__newPatient {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    .home__button__newPatient__span {
+      transform: translateY(.1rem);
+      top: 10px;
+      transition: ease-in-out 300ms;
+    }
+
+    &:hover>.home__button__newPatient__span {
+      transform: translateY(.1rem) translateX(.3rem) scale(1.3);
+      transition: ease-in-out 300ms;
     }
   }
 }

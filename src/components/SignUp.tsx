@@ -36,6 +36,8 @@ export const SignUp = () => {
       <h1 className="form__login__h1">Sign up</h1>
       <form className="form__login__form" onSubmit={handleSubmit}>
         <input
+          required
+          autoComplete="off"
           className="form__login__input"
           onChange={({ target }) =>
             setSignUpState({ ...signUpState, name: target.value })
@@ -44,6 +46,8 @@ export const SignUp = () => {
           placeholder="Name"
         />
         <input
+          required
+          autoComplete="off"
           className="form__login__input"
           onChange={({ target }) =>
             setSignUpState({ ...signUpState, fullName: target.value })
@@ -52,6 +56,8 @@ export const SignUp = () => {
           placeholder="Full Name"
         />
         <input
+          required
+          autoComplete="off"
           className="form__login__input"
           onChange={({ target }) =>
             setSignUpState({ ...signUpState, age: +target.value })

@@ -53,7 +53,7 @@ export const Dashboard = () => {
           New Patient
         </button>
         {data?.patients?.length === 0 ? (
-          <p>You don't have patients</p>
+          <p className="dashboard__p">You don't have patients</p>
         ) : (
           <ListPatients
             data={data}

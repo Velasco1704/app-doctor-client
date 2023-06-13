@@ -10,7 +10,7 @@ import { UpdateDoctorApiTypes } from "../interface/updateDoctorApi.interface";
 export const doctorsApi = createApi({
   reducerPath: "doctorsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://app-doctor-server-4b5d.up.railway.app/api",
+    baseUrl: import.meta.env.VITE_API_URL,
   }),
   tagTypes: ["Doctors"],
   endpoints: (builder) => ({

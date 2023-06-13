@@ -28,6 +28,8 @@ export const CreatePatient: React.FC<PropsCreatePatientTypes> = ({
       <form className="createPatient__form" onSubmit={handleSubmit}>
         <div className="createPatient__form__inputs__container">
           <input
+            autoComplete="off"
+            required
             className="createPatient__form__input"
             onChange={({ target }) =>
               setFormState({
@@ -40,6 +42,8 @@ export const CreatePatient: React.FC<PropsCreatePatientTypes> = ({
             type="text"
           />
           <input
+            autoComplete="off"
+            required
             className="createPatient__form__input"
             onChange={({ target }) =>
               setFormState({
@@ -52,6 +56,8 @@ export const CreatePatient: React.FC<PropsCreatePatientTypes> = ({
             type="text"
           />
           <input
+            autoComplete="off"
+            required
             className="createPatient__form__input"
             onChange={({ target }) =>
               setFormState({
@@ -64,6 +70,8 @@ export const CreatePatient: React.FC<PropsCreatePatientTypes> = ({
             type="number"
           />
           <input
+            autoComplete="off"
+            required
             className="createPatient__form__input"
             onChange={({ target }) =>
               setFormState({
@@ -76,6 +84,8 @@ export const CreatePatient: React.FC<PropsCreatePatientTypes> = ({
             type="email"
           />
           <input
+            autoComplete="off"
+            required
             className="createPatient__form__input"
             onChange={({ target }) =>
               setFormState({
@@ -88,6 +98,8 @@ export const CreatePatient: React.FC<PropsCreatePatientTypes> = ({
             type="text"
           />
           <input
+            autoComplete="off"
+            required
             className="createPatient__form__input"
             onChange={({ target }) =>
               setFormState({
@@ -100,6 +112,8 @@ export const CreatePatient: React.FC<PropsCreatePatientTypes> = ({
             type="number"
           />
           <input
+            autoComplete="off"
+            required
             className="createPatient__form__input"
             onChange={({ target }) =>
               setFormState({
@@ -112,6 +126,8 @@ export const CreatePatient: React.FC<PropsCreatePatientTypes> = ({
             type="number"
           />
           <input
+            autoComplete="off"
+            required
             className="createPatient__form__input"
             onChange={({ target }) =>
               setFormState({
@@ -124,6 +140,8 @@ export const CreatePatient: React.FC<PropsCreatePatientTypes> = ({
             type="number"
           />
           <input
+            autoComplete="off"
+            required
             className="createPatient__form__input"
             onChange={({ target }) =>
               setFormState({

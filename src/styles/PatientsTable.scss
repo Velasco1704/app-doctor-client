@@ -1,5 +1,6 @@
 .patientsTable__container {
   .patientsTable__h1 {
+    margin-top: 2rem;
     font-size: 2em;
   }
 
@@ -7,15 +8,19 @@
     font-size: 1.3em;
 
     .patientsTable__tr {
+      border-radius: 1rem;
       text-align: center;
       padding: .5rem 1rem;
 
       .patientsTable__th {
+        background: rgba(0, 157, 255, 0.1);
         padding: .5rem 1rem;
         border: .15rem solid var(--blue);
       }
 
       .patientsTable__td {
+        color: var(--black);
+        background: var(--white);
         padding: .5rem 1rem;
         border: .15rem solid var(--blue);
       }
